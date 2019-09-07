@@ -22,14 +22,18 @@
 
 
 @if (ViewBag.total != null)
-{
+    {
    
 
-    double total = @ViewBag.total;
+        double total = @ViewBag.total;
 
-   string money = String.Format("{0:$0,0.00}", total);  
+        string money = String.Format("{0:$0,0.00}", total);  
 
-    <h4>@money</h4>
+        <h4>@money</h4>
 
+    }
+else if(ViewBag.message != null)
+    {
+        <h3>@ViewBag.message</h3>
     }
 

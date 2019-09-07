@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Grade";
 }
-    <h2>Grade</h2>
+<h2>Grade</h2>
 
 @using (Html.BeginForm("GradeCal", "Grades", FormMethod.Post))
 {
@@ -17,7 +17,8 @@
     @Html.Label("Test 3:")
     <br />
     @Html.TextBox("test3", null, new { @class = "textbox", type = "number" })
-    <br /><br />
+    <br />
+    <br />
 
     <input type="submit" value="Calculate your Grades!" />
 }
@@ -51,5 +52,9 @@
             <h4></h4>
         }
     </text>
+}
+else if (ViewBag.message != null)
+{
+    <h3>@ViewBag.message</h3>
 }
 
