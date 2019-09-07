@@ -1,0 +1,35 @@
+﻿
+@{
+
+    ViewBag.Title = "Loan";
+}
+
+<h2>Loan</h2>
+
+<form action="/Loan/LoanCal" method="post">
+    Initial Investment: <br /> <input id="inv" type="number" name="inv" /><br />
+    Interest Rate: <br /> <input id="rate" type="number" name="rate" />%<br />
+    Number of Years: <br /> <input id="year" type="number" name="year" /><br />
+
+
+    <br />
+    <br />
+
+    <input type="submit" value="Calculate" />
+
+</form>
+<br />
+
+
+@if (ViewBag.total != null)
+{
+   
+
+    double total = @ViewBag.total;
+
+   string money = String.Format("{0:$0,0.00}", total);  
+
+    <h4>@money</h4>
+
+    }
+

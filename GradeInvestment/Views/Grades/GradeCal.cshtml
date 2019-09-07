@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Grade";
+}
+    <h2>Grade</h2>
+
+@using (Html.BeginForm("GradeCal", "Grades", FormMethod.Post))
+{
+    @Html.Label("Test 1:")
+    <br />
+    @Html.TextBox("test1", null, new { @class = "textbox", type = "number" })
+    <br />
+    @Html.Label("Test 2:")
+    <br />
+    @Html.TextBox("test2", null, new { @class = "textbox", type = "number" })
+    <br />
+    @Html.Label("Test 3:")
+    <br />
+    @Html.TextBox("test3", null, new { @class = "textbox", type = "number" })
+    <br /><br />
+
+    <input type="submit" value="Calculate your Grades!" />
+}
+
+
+<br />
+<br />
+
+
+@if (ViewBag.avg != null)
+{
+
+
+    int avg = @ViewBag.avg;
+    char letter = ViewBag.letter;
+    <text>
+        @if (letter == 'A' || letter == 'B')
+        {
+            <h4> @avg % &nbsp; <span style="color:lawngreen">@letter</span></h4>
+        }
+        else if (letter == 'C')
+        {
+            <h4> @avg % &nbsp;<span style="color:yellow">@letter</span></h4>
+        }
+        else if (letter == 'D' || letter == 'F')
+        {
+            <h4> @avg % &nbsp; <span style="color:red">@letter</span></h4>
+        }
+        else
+        {
+            <h4></h4>
+        }
+    </text>
+}
+
